@@ -31,11 +31,15 @@ type LinkProps = PropsWithChildren<{
 	href: string
 	className?: string
 	icon?: ReactNode
+	space?: number
 }>
 
-export const Link = ({ href, children, className, icon }: LinkProps) => {
+export const Link = ({ href, children, className, icon, space }: LinkProps) => {
 	return (
-		<LinkNext className={cn('flex items-center gap-1', className)} href={href}>
+		<LinkNext
+			className={cn(`flex items-center gap-${space ?? 1}`, className)}
+			href={href}
+		>
 			{icon} {children}
 		</LinkNext>
 	)
