@@ -1,6 +1,7 @@
 import Provider from '@/components/providers/session-provider'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
+import { TooltipProvider } from '@/components/ui/tooltip'
 import { config } from '@/utils/auth-config'
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 					disableTransitionOnChange
 				>
 					<Provider session={session}>{children}</Provider>
+					<TooltipProvider>{children}</TooltipProvider>
 					<Toaster />
 				</ThemeProvider>
 			</body>

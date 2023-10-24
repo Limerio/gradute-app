@@ -1,19 +1,42 @@
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from '@/components/ui/tooltip'
 import { cn } from '@/utils/functions'
 import LinkNext from 'next/link'
-import { ReactNode } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 
-type LinkProps = {
-	href: string
-	children: ReactNode
-	className: string
-}
+type LinkPropsWithToolTip = {
+	tooltip: string
+} & LinkProps
 
-const Link = ({ href, children, className }: LinkProps) => {
+export const LinkWithTooltip = ({
+	tooltip,
+	...linkProps
+}: LinkPropsWithToolTip) => {
 	return (
-		<LinkNext className={cn('', className)} href={href}>
-			{children}
-		</LinkNext>
+		<Tooltip>
+			<TooltipTrigger asChild>
+				<Link {...linkProps} />
+			</TooltipTrigger>
+			<TooltipContent>
+				<p>{tooltip}</p>
+			</TooltipContent>
+		</Tooltip>
 	)
 }
 
-export { Link }
+type LinkProps = PropsWithChildren<{
+	href: string
+	className?: string
+	icon?: ReactNode
+}>
+
+export const Link = ({ href, children, className, icon }: LinkProps) => {
+	return (
+		<LinkNext className={cn('flex items-center gap-1', className)} href={href}>
+			{icon} {children}
+		</LinkNext>
+	)
+}
