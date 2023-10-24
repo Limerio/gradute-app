@@ -1,7 +1,7 @@
-import Provider from '@/components/providers/session-provider'
-import { ThemeProvider } from '@/components/theme-provider'
+import { SessionProvider, ThemeProvider } from '@/components/providers'
 import { Toaster } from '@/components/ui/toaster'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { Footer, Navbar, Sidebar } from '@/layout'
 import { config } from '@/utils/auth-config'
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
@@ -28,8 +28,17 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 					enableSystem
 					disableTransitionOnChange
 				>
-					<Provider session={session}>{children}</Provider>
-					<TooltipProvider>{children}</TooltipProvider>
+					<TooltipProvider>
+						<SessionProvider session={session}>
+							<Sidebar />
+							<main className="flex flex-auto flex-col items-center h-full">
+								<Navbar />
+								<section className="p-5 w-full h-full">{children}</section>
+								<Footer />
+							</main>
+							<Toaster />
+						</SessionProvider>
+					</TooltipProvider>
 					<Toaster />
 				</ThemeProvider>
 			</body>
