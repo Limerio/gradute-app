@@ -2,10 +2,8 @@ import { SessionProvider, ThemeProvider } from '@/components/providers'
 import { Toaster } from '@/components/ui/toaster'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Footer, Navbar, Sidebar } from '@/layout'
-import { config } from '@/utils/auth-config'
-import { cn } from '@/utils/functions'
+import { cn, getSession } from '@/utils/functions'
 import type { Metadata } from 'next'
-import { getServerSession } from 'next-auth'
 import { Inter } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import './globals.css'
@@ -18,12 +16,17 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: PropsWithChildren) {
-	const session = await getServerSession(config)
+	const session = await getSession()
 
 	return (
 		<html lang="en">
 			<body
-				className={cn('flex items-center w-full h-[100vh]', inter.className)}
+				className={cn(
+					'flex items-center w-full h-[100vh]',
+					'text-black',
+					'dark:text-white',
+					inter.className,
+				)}
 			>
 				<ThemeProvider
 					attribute="class"
