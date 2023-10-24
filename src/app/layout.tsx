@@ -3,6 +3,7 @@ import { Toaster } from '@/components/ui/toaster'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Footer, Navbar, Sidebar } from '@/layout'
 import { config } from '@/utils/auth-config'
+import { cn } from '@/utils/functions'
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { Inter } from 'next/font/google'
@@ -21,7 +22,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body
+				className={cn('flex items-center w-full h-[100vh]', inter.className)}
+			>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
