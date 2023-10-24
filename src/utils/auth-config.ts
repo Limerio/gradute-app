@@ -4,7 +4,8 @@ import { NextAuthOptions } from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 
 const prisma = new PrismaClient()
-export const config: NextAuthOptions = {
+
+export const authConfig: NextAuthOptions = {
 	session: { strategy: 'jwt' },
 	adapter: PrismaAdapter(prisma),
 	providers: [
