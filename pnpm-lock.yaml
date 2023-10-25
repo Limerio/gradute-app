@@ -7,6 +7,7 @@ specifiers:
   '@prisma/client': ^5.4.2
   '@radix-ui/react-hover-card': ^1.0.7
   '@radix-ui/react-label': ^2.0.2
+  '@radix-ui/react-popover': ^1.0.7
   '@radix-ui/react-select': ^2.0.0
   '@radix-ui/react-slot': ^1.0.2
   '@radix-ui/react-switch': ^1.0.3
@@ -14,12 +15,15 @@ specifiers:
   '@radix-ui/react-toast': ^1.1.5
   '@radix-ui/react-tooltip': ^1.0.7
   '@tanstack/react-table': ^8.10.7
+  '@types/chart.js': ^2.9.39
   '@types/node': ^20
   '@types/react': ^18
   '@types/react-dom': ^18
   autoprefixer: ^10
+  chart.js: ^4.4.0
   class-variance-authority: ^0.7.0
   clsx: ^2.0.0
+  date-fns: ^2.30.0
   eslint: ^8
   eslint-config-next: 13.5.6
   lucide-react: ^0.288.0
@@ -31,6 +35,7 @@ specifiers:
   prisma: ^5.4.2
   react: ^18
   react-charts: beta
+  react-day-picker: ^8.9.1
   react-dom: ^18
   react-hook-form: ^7.47.0
   react-loader-spinner: ^5.4.5
@@ -47,6 +52,7 @@ dependencies:
   '@prisma/client': 5.4.2_prisma@5.4.2
   '@radix-ui/react-hover-card': 1.0.7_4s4xqdzi7v7cvkwemc5brwkohy
   '@radix-ui/react-label': 2.0.2_4s4xqdzi7v7cvkwemc5brwkohy
+  '@radix-ui/react-popover': 1.0.7_4s4xqdzi7v7cvkwemc5brwkohy
   '@radix-ui/react-select': 2.0.0_4s4xqdzi7v7cvkwemc5brwkohy
   '@radix-ui/react-slot': 1.0.2_uruz7wj5nvbintwsrh6fwqb4ri
   '@radix-ui/react-switch': 1.0.3_4s4xqdzi7v7cvkwemc5brwkohy
@@ -54,14 +60,17 @@ dependencies:
   '@radix-ui/react-toast': 1.1.5_4s4xqdzi7v7cvkwemc5brwkohy
   '@radix-ui/react-tooltip': 1.0.7_4s4xqdzi7v7cvkwemc5brwkohy
   '@tanstack/react-table': 8.10.7_biqbaboplfbrettd7655fr4n2y
+  chart.js: 4.4.0
   class-variance-authority: 0.7.0
   clsx: 2.0.0
+  date-fns: 2.30.0
   lucide-react: 0.288.0_react@18.2.0
   next: 13.5.6_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.24.3_geniznlzs656uacumbd4vvx6ke
   next-themes: 0.2.1_geniznlzs656uacumbd4vvx6ke
   react: 18.2.0
   react-charts: 3.0.0-beta.56_biqbaboplfbrettd7655fr4n2y
+  react-day-picker: 8.9.1_kzhlcyde2l6xjiirkbg7jzhosa
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.47.0_react@18.2.0
   react-loader-spinner: 5.4.5_biqbaboplfbrettd7655fr4n2y
@@ -71,6 +80,7 @@ dependencies:
 
 devDependencies:
   '@playwright/test': 1.39.0
+  '@types/chart.js': 2.9.39
   '@types/node': 20.8.7
   '@types/react': 18.2.31
   '@types/react-dom': 18.2.14
@@ -605,6 +615,10 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  /@kurkle/color/0.3.2:
+    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==}
+    dev: false
+
   /@next/env/13.5.6:
     resolution: {integrity: sha512-Yac/bV5sBGkkEXmAX5FWPS9Mmo2rthrOPRQQNfycJPkjUAUclomCPH7QFVCDQ4Mp2k2K1SSM6m0zrxYrOwtFQw==}
     dev: false
@@ -972,6 +986,41 @@ packages:
       '@types/react-dom': 18.2.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@radix-ui/react-popover/1.0.7_4s4xqdzi7v7cvkwemc5brwkohy:
+    resolution: {integrity: sha512-shtvVnlsxT6faMnK/a7n0wptwBD23xc1Z5mdrtKLwVEfsEMXodS0r5s0/g5P0hX//EKYZS2sxUjqfzlg52ZSnQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.23.2
+      '@radix-ui/primitive': 1.0.1
+      '@radix-ui/react-compose-refs': 1.0.1_uruz7wj5nvbintwsrh6fwqb4ri
+      '@radix-ui/react-context': 1.0.1_uruz7wj5nvbintwsrh6fwqb4ri
+      '@radix-ui/react-dismissable-layer': 1.0.5_4s4xqdzi7v7cvkwemc5brwkohy
+      '@radix-ui/react-focus-guards': 1.0.1_uruz7wj5nvbintwsrh6fwqb4ri
+      '@radix-ui/react-focus-scope': 1.0.4_4s4xqdzi7v7cvkwemc5brwkohy
+      '@radix-ui/react-id': 1.0.1_uruz7wj5nvbintwsrh6fwqb4ri
+      '@radix-ui/react-popper': 1.1.3_4s4xqdzi7v7cvkwemc5brwkohy
+      '@radix-ui/react-portal': 1.0.4_4s4xqdzi7v7cvkwemc5brwkohy
+      '@radix-ui/react-presence': 1.0.1_4s4xqdzi7v7cvkwemc5brwkohy
+      '@radix-ui/react-primitive': 1.0.3_4s4xqdzi7v7cvkwemc5brwkohy
+      '@radix-ui/react-slot': 1.0.2_uruz7wj5nvbintwsrh6fwqb4ri
+      '@radix-ui/react-use-controllable-state': 1.0.1_uruz7wj5nvbintwsrh6fwqb4ri
+      '@types/react': 18.2.31
+      '@types/react-dom': 18.2.14
+      aria-hidden: 1.2.3
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-remove-scroll: 2.5.5_uruz7wj5nvbintwsrh6fwqb4ri
     dev: false
 
   /@radix-ui/react-popper/1.1.3_4s4xqdzi7v7cvkwemc5brwkohy:
@@ -1440,6 +1489,12 @@ packages:
 
   /@types/chai/4.3.9:
     resolution: {integrity: sha512-69TtiDzu0bcmKQv3yg1Zx409/Kd7r0b5F1PfpYJfSHzLGtB53547V4u+9iqKYsTu/O2ai6KTb0TInNpvuQ3qmg==}
+    dev: true
+
+  /@types/chart.js/2.9.39:
+    resolution: {integrity: sha512-FAsZ6v8ds40mVCgM44T1/ZDKuT1Lh6/a2D3nD8ZNX9SqBObBc0vH2VrcLjYP3PL8onPPt9rIw+QyEkgrzj31TQ==}
+    dependencies:
+      moment: 2.29.4
     dev: true
 
   /@types/d3-array/3.0.9:
@@ -1933,6 +1988,13 @@ packages:
       supports-color: 7.2.0
     dev: true
 
+  /chart.js/4.4.0:
+    resolution: {integrity: sha512-vQEj6d+z0dcsKLlQvbKIMYFHd3t8W/7L2vfJIbYcfyPcRx92CsHqECpueN8qVGNlKyDcr5wBrYAYKnfu/9Q1hQ==}
+    engines: {pnpm: '>=7'}
+    dependencies:
+      '@kurkle/color': 0.3.2
+    dev: false
+
   /check-error/1.0.3:
     resolution: {integrity: sha512-iKEoDYaRmd1mxM90a2OEfWhjsjPpYPuQ+lMYsoxB126+t8fw7ySEO48nmDg5COTjxDI65/Y2OWpeEHk3ZOe8zg==}
     dependencies:
@@ -2099,6 +2161,13 @@ packages:
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
+
+  /date-fns/2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.23.2
+    dev: false
 
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
@@ -3308,6 +3377,10 @@ packages:
       ufo: 1.3.1
     dev: true
 
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: true
+
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
@@ -3790,6 +3863,16 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       ts-toolbelt: 9.6.0
+    dev: false
+
+  /react-day-picker/8.9.1_kzhlcyde2l6xjiirkbg7jzhosa:
+    resolution: {integrity: sha512-W0SPApKIsYq+XCtfGeMYDoU0KbsG3wfkYtlw8l+vZp6KoBXGOlhzBUp4tNx1XiwiOZwhfdGOlj7NGSCKGSlg5Q==}
+    peerDependencies:
+      date-fns: ^2.28.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      date-fns: 2.30.0
+      react: 18.2.0
     dev: false
 
   /react-dom/18.2.0_react@18.2.0:
