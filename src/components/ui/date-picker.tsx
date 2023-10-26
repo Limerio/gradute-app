@@ -24,14 +24,17 @@ type DatePickerBaseProps = {
 	defaultMonth?: Date
 }
 
-export const DatePicker = forwardRef((props: DatePickerBaseProps, ref) => {
+export const DatePicker = forwardRef<
+	InteractionDatePicker,
+	DatePickerBaseProps
+>((props, ref) => {
 	const { mode, defaultMonth } = props
 
 	const [date, setDate] = useState<Date | DateRange>()
 
 	useImperativeHandle(
 		ref,
-		(): InteractionDatePicker => {
+		() => {
 			return {
 				getDate() {
 					return date
