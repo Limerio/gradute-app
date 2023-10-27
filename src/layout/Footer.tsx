@@ -6,7 +6,7 @@ export const Footer = () => {
 			className={cn(
 				'flex items-center justify-center',
 				'w-full p-5',
-				'bg-slate-100',
+				'bg-slate-200',
 				'dark:bg-slate-800',
 			)}
 		>

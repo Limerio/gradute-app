@@ -13,7 +13,7 @@ export const SidebarLink = ({ children, href, icon }: TSidebarLink) => {
 			className={cn(
 				'py-4 pl-6 pr-12 rounded-3xl',
 				'hover:cursor-pointer',
-				'bg-slate-100 hover:bg-slate-200',
+				'bg-slate-200 hover:bg-slate-300',
 				'dark:bg-slate-800 dark:hover:bg-slate-900',
 			)}
 		>
