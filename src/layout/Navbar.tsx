@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav
 			className={cn(
 				'flex items-center justify-between',
-				'w-full h-8 p-8',
+				'w-full h-8 p-8 rounded-b-xl',
 				'bg-slate-200',
 				'dark:bg-slate-800',
 			)}

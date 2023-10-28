@@ -4,7 +4,7 @@ import {
 	UserInfoSidebar,
 } from '@/components/layout/Sidebar'
 import { cn } from '@/utils/functions'
-import { HomeIcon, PlusCircleIcon } from 'lucide-react'
+import { HomeIcon } from 'lucide-react'
 
 export const Sidebar = () => {
 	const sidebarLinks: TSidebarLink[] = [
@@ -12,11 +12,6 @@ export const Sidebar = () => {
 			href: '/',
 			icon: <HomeIcon />,
 			children: 'Home',
-		},
-		{
-			href: '/notes',
-			icon: <PlusCircleIcon />,
-			children: 'Add notes',
 		},
 	]
 
