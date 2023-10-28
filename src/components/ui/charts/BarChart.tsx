@@ -4,27 +4,9 @@ import { Chart } from './Chart'
 type BarChartProps = {
 	title: string
 	data: ChartDataset<'bar', DefaultDataPoint<'bar'>>[]
+	labels: string[]
 }
 
-export const BarChart = ({ title, data }: BarChartProps) => {
-	return (
-		<Chart
-			labels={[
-				'January',
-				'February',
-				'March',
-				'April',
-				'May',
-				'June',
-				'July',
-				'September',
-				'October',
-				'November',
-				'December',
-			]}
-			datasets={data}
-			title={title}
-			type="bar"
-		/>
-	)
+export const BarChart = ({ data, ...props }: BarChartProps) => {
+	return <Chart datasets={data} type="bar" {...props} />
 }
