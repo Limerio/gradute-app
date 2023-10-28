@@ -1,12 +1,12 @@
 import { ChartDataset, DefaultDataPoint } from 'chart.js'
 import { Chart } from './Chart'
 
-type LineChartProps = {
+type AreaChartProps = {
 	title: string
-	data: ChartDataset<'line', DefaultDataPoint<'line'>>[]
+	data: ChartDataset<'pie', DefaultDataPoint<'pie'>>[]
 	labels: string[]
 }
 
-export const LineChart = ({ data, ...props }: LineChartProps) => {
+export const AreaChart = ({ data, ...props }: AreaChartProps) => {
 	return <Chart datasets={data} type="line" {...props} />
 }
